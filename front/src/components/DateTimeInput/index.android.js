@@ -18,6 +18,7 @@ export default function DateTimeInputAndroid({ type }) {
     const [datetime, setDateTime] = useState();
 
 async function selectDataOrHour() {
+
     if(type == 'date') {
         const{action, year, month, day} = await DatePickerAndroid.open({
             mode: 'calendar'
@@ -32,6 +33,7 @@ async function selectDataOrHour() {
 
         if(action != TimePickerAndroid.dismissedAction)
         setDateTime(`${hour}:${minute}`);
+        
     }
 }
 

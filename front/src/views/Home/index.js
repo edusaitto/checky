@@ -5,7 +5,7 @@ import {
     TouchableOpacity,
     ScrollView,
     ActivityIndicator
-    } from 'react-native';
+} from 'react-native';
 
 import styles from './styles';
 
@@ -82,6 +82,7 @@ export default function Home({ navigation }) {
             </View>
             
             <ScrollView style={styles.content} contentContainerStyle={{alignItems: 'center'}}>
+                
                 {
                     load ?
                     <ActivityIndicator color='#FFF' size={30}/>

@@ -1,5 +1,4 @@
 //ICONES
-
 import car from '../assets/Grupo9.png';
 import run from '../assets/Grupo10.png';
 import music from '../assets/Grupo11.png';

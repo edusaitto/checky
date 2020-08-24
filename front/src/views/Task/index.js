@@ -8,15 +8,15 @@ import {
     KeyboardAvoidingView,
     TouchableOpacity,
     Switch,
-
-}
-from 'react-native';
+} from 'react-native';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+
 import DateTimeInput from '../../components/DateTimeInput';
 
 import typeIcons from '../../utils/typeIcons';
+
 import styles from './styles';
 
 export default function Task({ navigation }) {
@@ -29,7 +29,7 @@ export default function Task({ navigation }) {
                 <View 
                     style={styles.iconView}
                     //horizontal={true} 
-                    //showsHorizontalScrollIndicator={false} : para implementação do scroll
+                    //showsHorizontalScrollIndicator={false} - para implementação do scroll nos ícones
                 >
                     {
                         typeIcons.map(icon => (
@@ -66,7 +66,9 @@ export default function Task({ navigation }) {
 
                 
             </ScrollView>
+
             <Footer showAdd={false}/>
+            
         </KeyboardAvoidingView>
     )
 }

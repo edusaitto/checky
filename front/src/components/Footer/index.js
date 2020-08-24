@@ -1,6 +1,12 @@
 import React from 'react';
-import {View, Image, TouchableOpacity} from 'react-native';
+import {
+    View,
+    Image,
+    TouchableOpacity
+} from 'react-native';
+
 import styles from './styles';
+
 import add from '../../assets/add.png';
 import check from '../../assets/ok.png';
 
@@ -17,6 +23,7 @@ export default function Footer({ showAdd, onPress }) {
                 <Image source={check} style={styles.image2}/>
             </TouchableOpacity>
             }
+            
         </View>
     )
 }

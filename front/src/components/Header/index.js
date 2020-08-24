@@ -4,11 +4,10 @@ import {
     View,
     Text,
     Image
-    } from 'react-native'; 
+} from 'react-native'; 
     
 import styles from './styles';
 
-//ASSETS
 import logo from '../../assets/logo2.png';
 import bell from '../../assets/bell.png';
 import qr from '../../assets/qr.png';
