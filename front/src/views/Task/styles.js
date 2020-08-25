@@ -69,6 +69,9 @@ const styles = StyleSheet.create ({
         fontWeight: 'bold',
         color: '#b22222',
     },
+    typeIconInative: {
+        opacity: 0.5
+    }
 });
 
 export default styles;

@@ -9,6 +9,7 @@ const styles = StyleSheet.create ({
         borderBottomColor: '#558DD5',
         marginHorizontal: 10,
         marginVertical: 15,
+        color: '#fff'
     },
     iconTextInput: {
         position: 'absolute',
