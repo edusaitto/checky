@@ -7,6 +7,8 @@ import {
     ActivityIndicator
 } from 'react-native';
 
+import * as Network from 'expo-network';
+
 import styles from './styles';
 
 import api from '../../services/api';
@@ -26,14 +28,22 @@ export default function Home({ navigation }) {
 
     const [lateCount, setLateCount] = useState();
 
+    const [macaddress, setMacaddress] = useState();
+
+    async function getMacAddress() {
+        await Network.getMacAddressAsync(null).then(mac => {
+            setMacaddress(mac);
+        });    
+    }
+
     async function loadTasks() {
-        await api.get(`/task/filter/${filter}/11:11:11:11:11:11`).then(response=>{
+        await api.get(`/task/filter/${filter}/${macaddress}`).then(response=>{
             setTasks(response.data)
         });
     }
 
     async function lateVerify() {
-        await api.get(`/task/filter/late/11:11:11:11:11:11`).then(response=>{
+        await api.get(`/task/filter/late/${macaddress}`).then(response=>{
             setLateCount(response.data.length)
         });
     }
@@ -46,10 +56,16 @@ export default function Home({ navigation }) {
         navigation.navigate('Task')
     }
 
+    function Show(id) {
+        navigation.navigate('Task', {idtask: id})
+    }
+
     useEffect(() =>{
-        loadTasks();
+        getMacAddress().then(() =>{
+            loadTasks();
+        });
         lateVerify();
-    }, [filter])
+    }, [filter, macaddress])
 
     return (
         
@@ -89,7 +105,13 @@ export default function Home({ navigation }) {
                     : 
                     tasks.map(t =>
                     (
-                        <TaskCard done={false} title={t.title} when={t.when} type={t.type}/>
+                        <TaskCard 
+                            done={false} 
+                            title={t.title} 
+                            when={t.when} 
+                            type={t.type}
+                            onPress={() => Show(t._id)}
+                        />
                     ))
                 }
 

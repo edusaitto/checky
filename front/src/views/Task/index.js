@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     View,
     ScrollView,
@@ -9,8 +9,9 @@ import {
     TouchableOpacity,
     Switch,
     Alert,
-    Button
 } from 'react-native';
+
+import * as Network from 'expo-network';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -23,29 +24,33 @@ import styles from './styles';
 
 import api from '../../services/api';
 
-export default function Task({ navigation }) {
-
+export default function Task({ navigation, idTask }) {
+    const [id, setId] = useState();
     const [done, setDone] = useState(false);
     const [type, setType] = useState();
     const [title, setTitle] = useState();
     const [description, setDesc] = useState();
     const [date, setDate] = useState();
     const [hour, setHour] = useState();
-    const [macaddress, setMacaddress] = useState('11:11:11:11:11:11');
+    const [macaddress, setMacaddress] = useState();
 
     async function New() {
 
     if(!title)
-        return Alert.alert('Defina o nome da tarefa!')
+        return Alert.alert('Defina o nome da tarefa')
 
     if(!description)
-        return Alert.alert('Defina a descrição da tarefa!')
+        return Alert.alert('Defina a descrição da tarefa')
 
     if(!type)
-        return Alert.alert('Defina o tipo da tarefa!')
+        return Alert.alert('Defina o tipo da tarefa')
         
     if(!date)
-        return Alert.alert('Defina a data da tarefa!')    
+        return Alert.alert('Defina a data da tarefa') 
+    
+    if(!hour)
+        return Alert.alert('Defina o horário da tarefa')
+
 
     await api.post('/task', {
         macaddress, 
@@ -58,6 +63,18 @@ export default function Task({ navigation }) {
     })
 
     }
+
+    async function getMacAddress() {
+        await Network.getMacAddressAsync(null).then(mac => {
+            setMacaddress(mac);
+        });    
+    }
+
+    useEffect(() => {
+        if(navigation.state.params)
+            setId(navigation.state.params.idtask);
+        getMacAddress();
+    });
 
     return (
         <KeyboardAvoidingView style={styles.container}>
@@ -101,6 +118,8 @@ export default function Task({ navigation }) {
                 <DateTimeInput type={'date'} save={setDate}/>
                 <DateTimeInput type={'hour'} save={setHour}/>         
 
+                {
+                id &&
                 <View style={styles.inLine}>
                     <View style={styles.inputInLine}>
                         <Switch onValueChange={() => setDone(!done)} value={done} thumbColor={done ? '#00463A' : '#fff'} />
@@ -110,7 +129,7 @@ export default function Task({ navigation }) {
                         <Text style={styles.removeLabel}>EXCLUIR</Text>
                     </TouchableOpacity>
                 </View>
-
+                }
                 
             </ScrollView>
 

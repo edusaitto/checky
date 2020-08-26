@@ -56,7 +56,7 @@ export default function DateTimeInputAndroid({ type, save }) {
           const minute = new Date(data).getMinutes();
           setDateTime(`${hour}:${minute}`);
           sethoravisible(false);
-          save(format(new Date(2020, 12, 1, hour, minute, 0, 0), 'HH:mm:ss'))
+          save(format(new Date(2020, 12, 1, hour-3, minute, 0, 0), 'HH:mm:ss'))
         }}
         onCancel={() => sethoravisible(false)}
         value={hora}
