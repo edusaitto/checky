@@ -99,7 +99,7 @@ export default function Task({ navigation }) {
                 />
             
                 <DateTimeInput type={'date'} save={setDate}/>
-                <DateTimeInput type={'hour'} save={setHour}/>                
+                <DateTimeInput type={'hour'} save={setHour}/>         
 
                 <View style={styles.inLine}>
                     <View style={styles.inputInLine}>
