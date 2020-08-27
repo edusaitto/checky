@@ -4,7 +4,8 @@ import {
     Text,
     TouchableOpacity,
     ScrollView,
-    ActivityIndicator
+    ActivityIndicator,
+    Alert
 } from 'react-native';
 
 import * as Network from 'expo-network';
@@ -106,7 +107,7 @@ export default function Home({ navigation }) {
                     tasks.map(t =>
                     (
                         <TaskCard 
-                            done={false} 
+                            done={t.done} 
                             title={t.title} 
                             when={t.when} 
                             type={t.type}

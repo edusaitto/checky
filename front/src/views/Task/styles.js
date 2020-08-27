@@ -4,7 +4,7 @@ const styles = StyleSheet.create ({
     container: {
         flex: 1,
         backgroundColor: '#161616',
-        alignItems: 'flex-start',
+        alignItems: 'center',
         justifyContent: 'flex-start'
     },
     iconView: {
