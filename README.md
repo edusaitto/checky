@@ -1,5 +1,6 @@
 # CHECKY
 um app de gestão de tarefas simples e funcional!
+(Node.js / MongoDB / React Native)
 
 # funcionalidades
 - criação de tarefas (título, descrição, data e horário)
@@ -28,4 +29,10 @@ um app de gestão de tarefas simples e funcional!
   - opção de adicionar nova
   - opção de exibir as opções detalhadas
   - opção de acessar a tela "QR" (ainda não implementada)
+- página TAREFA
+  - inserir / reinserir título
+  - inserir / reinserir descrição
+  - inserir / resinserir data e hora
+  - marcar como concluído
+  - excluir tarefa
   
