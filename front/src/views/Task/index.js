@@ -60,7 +60,7 @@ export default function Task({ navigation }) {
                 type,
                 title,
                 description,
-                when: `${date}T${hour}.000`
+                when: `${date}T${hour+3}.000`
                 }).then(() => {
                     navigation.navigate('Home');
             });
@@ -177,7 +177,7 @@ export default function Task({ navigation }) {
                 id &&
                 <View style={styles.inLine}>
                     <View style={styles.inputInLine}>
-                        <Switch onValueChange={() => setDone(!done)} value={done} thumbColor={done ? '#00463A' : '#fff'} />
+                        <Switch onValueChange={() => setDone(!done)} value={done} thumbColor={done ? '#00463A' : '#FFF'} />
                         <Text style={styles.switchLabel}>CONCLUÍDO</Text>
                     </View>
                     <TouchableOpacity onPress={Remove}>

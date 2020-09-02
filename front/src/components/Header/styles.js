@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         paddingTop: 25,
     },
     logo: {
-        width: 80,
+        width: 90,
         height: 30,
     },
     notification: {
