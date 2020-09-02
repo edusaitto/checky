@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "checky",
+    "name": "Checky",
     "slug": "checky",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/icon1.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/assets/splashart.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#238ed9"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -16,11 +16,9 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "android": {
+      "package": "com.saito.checky",
+      "versionCode": 1
     }
   }
 }

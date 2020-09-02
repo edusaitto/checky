@@ -110,7 +110,7 @@ export default function DateTimeInputAndroid({ type, save, date, hour }) {
           }
 
           sethoravisible(false);
-          save(format(new Date(2020, 12, 1, hour-3, minute, 0, 0), 'HH:mm:ss'))
+          save(format(new Date(2020, 12, 1, hour+3, minute, 0, 0), 'HH:mm:ss'))
         }}
         onCancel={() => sethoravisible(false)}
         value={hora}

@@ -63,7 +63,8 @@ export default function Task({ navigation }) {
                 when: `${date}T${hour}.000`
                 }).then(() => {
                     navigation.navigate('Home');
-            })
+            });
+
         } else {
             await api.post('/task', {
                 macaddress, 
@@ -72,7 +73,7 @@ export default function Task({ navigation }) {
                 description,
                 when: `${date}T${hour}.000`
             }).then(() => {
-                    navigation.navigate('Home');
+                navigation.navigate('Home');
             })
         }
     }
