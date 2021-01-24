@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://appchecky-com.umbler.net'
+    baseURL: 'https://checky.vercel.app/'
 });
 
 export default api;
