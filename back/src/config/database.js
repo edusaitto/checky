@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
     try {
         mongoose.connect(
-            'mongodb://saito:saitochecky@cluster0.zwpoj.mongodb.net/checky', 
+            'mongodb://saito:Saito1502@geonosis.mongodb.umbler.com:48124', 
             { useNewUrlParser: true }
             )
     } catch (error) {
