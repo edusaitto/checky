@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
     try {
         mongoose.connect(
-            'mongodb://saito:Saito1502@mongo_checkydb:27017', 
+            'mongodb://saito:*****@mongo_checkydb:*****', 
             { useNewUrlParser: true }
             )
     } catch (error) {
